@@ -1,6 +1,6 @@
 import { Queues } from '../enums';
 import Rabbit from '.'
-export default class ExchangeControl {
+export default class MessageRabbit {
 
   async sendMessage(queue: Queues, message: string) {
     const ch = await Rabbit.getInstance().getChannel();
