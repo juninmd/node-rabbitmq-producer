@@ -1,3 +1,3 @@
 export default {
-  rabbitmq: 'amqp://guest:guest@localhost:49154/'
+  rabbitmq: 'amqp://guest:guest@localhost:49154/',
 };

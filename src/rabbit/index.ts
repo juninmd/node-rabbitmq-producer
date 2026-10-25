@@ -6,7 +6,10 @@ export default class Rabbit {
 
   private channel: amplib.Channel;
 
-  private constructor() { };
+  // Construtor privado: a instância única é controlada por getInstance().
+  private constructor() {
+    // intencionalmente vazio
+  }
 
   public static getInstance(): Rabbit {
     if (!Rabbit.instance) {
@@ -22,5 +25,4 @@ export default class Rabbit {
     }
     return this.channel;
   }
-
 }
