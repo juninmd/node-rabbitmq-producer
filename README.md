@@ -21,9 +21,12 @@ A standard software project.
 
 **Key Files:**
 
-*   `src/producer.ts`: Contains the producer logic.
-*   `src/config/envs.json`:  Configures RabbitMQ connection parameters.
-*   `src/config/rabbitmq.env`:  RabbitMQ connection string.
+*   `src/index.ts`: Entry point (loads env, starts the HTTP server).
+*   `src/server.ts`: Express app setup.
+*   `src/api/index.ts`: `GET /` route that publishes test messages to the `log` and `order` queues (returns 500 if RabbitMQ is unreachable).
+*   `src/rabbit/`: Singleton RabbitMQ connection (`index.ts`) and queue publisher (`message.rabbit.ts`).
+*   `src/configs/index.ts`: RabbitMQ connection URL (default `amqp://guest:guest@localhost:49154/`).
+*   `envs/`: Optional `.env-<NODE_ENV>` files loaded by `src/tools/envs.tools.ts`.
 *   `docker-compose.yml`: Defines the Docker environment for the application.
 *   `package.json`:  Lists dependencies and project metadata.
 *   `readme.md`:  Provides documentation for the project.
